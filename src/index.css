@@ -15,6 +15,10 @@ body.dark {
   color: #f4f4f9;
 }
 
+span {
+  cursor: pointer;
+}
+
 .app {
   display: flex;
   height: 100vh;

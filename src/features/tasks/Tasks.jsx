@@ -1,13 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect } from "react"
 import { CurrentUserContext } from "../../core/context/CurrentUserContext"
 import { TaskContext } from "./context/TasksContext";
-import { TaskList } from "./components/taskList";
+import { TaskList } from "./components/TaskList";
 import { TaskForm } from "./components/TaskForm";
 
 
 export function Tasks() {
 
-    const { tasks, addTask, getDoneTasksByUser, getAllTasksByUser } = useContext(TaskContext);
+    const { tasks, addTask, markTaskAsDone, getDoneTasksByUser, getAllTasksByUser, deleteTask,  } = useContext(TaskContext);
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
 
@@ -28,18 +29,27 @@ export function Tasks() {
             title: title,
             done: false
         }
-        
+
         addTask(newTask);
+        setCurrentUser(({ totalTasks, tasksDone, ...rest }) => rest);
     };
 
+    const removeTask = (taskId) =>  {
+        deleteTask(taskId);
+        setCurrentUser(({ totalTasks, tasksDone, ...rest }) => rest);
+    }
+
+    const markAsDone = (taskId) => {
+        markTaskAsDone(taskId) 
+        setCurrentUser(({ totalTasks, tasksDone, ...rest }) => rest);
+    } ;
 
 
     return <div className="card">
         <h1 id="mainTitle">{!currentUser ? "Selecciona un usuario:" : `Tareas de ${currentUser.username}`} </h1>
 
-
         <div id="taskSection">
-            <TaskList taskList={getAllTasksByUser(currentUser?.currentUserId)} />
+            <TaskList taskList={getAllTasksByUser(currentUser?.currentUserId)} deleteTask={removeTask} markTaskAsDone={markAsDone}/>
             {currentUser && <TaskForm createTask={createNewTask} />}
         </div>
 
