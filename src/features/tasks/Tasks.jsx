@@ -8,7 +8,7 @@ import { TaskForm } from "./components/TaskForm";
 
 export function Tasks() {
 
-    const { tasks, addTask, markTaskAsDone, getDoneTasksByUser, getAllTasksByUser, deleteTask,  } = useContext(TaskContext);
+    const { tasks, addTask, markTaskAsDone, getDoneTasksByUser, getAllTasksByUser, deleteTask, updateTask } = useContext(TaskContext);
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
 
@@ -44,12 +44,16 @@ export function Tasks() {
         setCurrentUser(({ totalTasks, tasksDone, ...rest }) => rest);
     } ;
 
+    const updateTaskName = (taskId) => {
+        const newName = prompt("Editar tarea:");
+        updateTask(taskId, newName)
+    }
 
     return <div className="card">
         <h1 id="mainTitle">{!currentUser ? "Selecciona un usuario:" : `Tareas de ${currentUser.username}`} </h1>
 
         <div id="taskSection">
-            <TaskList taskList={getAllTasksByUser(currentUser?.currentUserId)} deleteTask={removeTask} markTaskAsDone={markAsDone}/>
+            <TaskList taskList={getAllTasksByUser(currentUser?.currentUserId)} deleteTask={removeTask} markTaskAsDone={markAsDone} updateTask={updateTaskName}/>
             {currentUser && <TaskForm createTask={createNewTask} />}
         </div>
 

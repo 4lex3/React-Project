@@ -31,9 +31,8 @@ export function TaskContextProvider({ children }) {
     };
 
     const addTask = (newTask) => setTasks((prevTasks) => [...prevTasks, newTask]);
-    const updateTask = (taskId, dataTask) => setTasks((prevTasks) => prevTasks.map((task) => (task.id === taskId ? dataTask : task)));
+    const updateTask = (taskId, title) => setTasks((prevTasks) => prevTasks.map((task) => (task.id === taskId ? {...task, title: title} : task)));
     const deleteTask = (taskId) => setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-
 
     return (
         <TaskContext.Provider value={{ tasks, markTaskAsDone, getDoneTasksByUser, getAllTasksByUser, addTask, updateTask, deleteTask }}>

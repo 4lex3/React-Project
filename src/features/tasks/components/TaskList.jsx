@@ -10,7 +10,7 @@ export function TaskList({ taskList, deleteTask, markTaskAsDone, updateTask }) {
                 <li key={task.id} className={task.done ? "completed": ""}>
                     <span onClick={() => markTaskAsDone(task.id)}>{task.title}</span>
                     <div className="actions">
-                        <button onClick={updateTask}>✏️</button>
+                        <button onClick={() => updateTask(task.id)}>✏️</button>
                         <button onClick={() => deleteTask(task.id)}>🗑️</button>
                     </div>
                 </li>
