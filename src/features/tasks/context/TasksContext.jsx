@@ -20,7 +20,7 @@ export const TaskContext = createContext([]);
 // eslint-disable-next-line react/prop-types
 export function TaskContextProvider({ children }) {
 
-    const [tasks, setTasks] = useState([{id: 0, userId: 1, title: "kris", done: true}]);
+    const [tasks, setTasks] = useState([]);
 
     const getAllTasksByUser = (userId) => tasks.filter(task => task.userId === userId);
     // const getPendingTasksByUser = (userId) => tasks.filter(task => task.userId === userId && task.done === false);
