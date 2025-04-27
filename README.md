@@ -1,6 +1,7 @@
 # React - Project
 Aplicacion de TODO con gestion de multiusuarios.
 
+![Portada](https://raw.githubusercontent.com/4lex3/React-Project/refs/heads/main/docs/portada.png)
 
 ## Arquitectura:
 
@@ -51,6 +52,7 @@ Aplicacion de TODO con gestion de multiusuarios.
 - **UseContext:**: Logica compartida entre los distintos componentes de la APP:
 
 
+![UseContext](https://raw.githubusercontent.com/4lex3/React-Project/refs/heads/main/docs/Drawing%202025-04-27%2011.57.05.excalidraw.png)
 
 
 # React + Vite
