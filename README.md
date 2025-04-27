@@ -1,3 +1,58 @@
+# React - Project
+Aplicacion de TODO con gestion de multiusuarios.
+
+
+## Arquitectura:
+
+```sh
+├── src/
+│   ├── App.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── core/
+│   │   └── context/
+│   │       └── CurrentUserContext.jsx
+│   ├── features/
+│   │   ├── tasks/
+│   │   │   ├── Tasks.jsx
+│   │   │   ├── components/
+│   │   │   │   ├── TaskForm.jsx
+│   │   │   │   └── TaskList.jsx
+│   │   │   └── context/
+│   │   │       └── TasksContext.jsx
+│   │   ├── theme/
+│   │   │   └── ThemeSwitcher.jsx
+│   │   ├── users/
+│   │   │   ├── Users.jsx
+│   │   │   ├── components/
+│   │   │   │   ├── UserForm.jsx
+│   │   │   │   ├── UserInfo.jsx
+│   │   │   │   └── UserList.jsx
+│   │   │   └── context/
+│   │   │       └── UserContext.jsx
+│   ├── index.css
+│   ├── main.jsx
+```
+- **src/**: Carpeta principal del código fuente.
+  - **App.jsx**: Componente raíz de la aplicación.
+  - **main.jsx**: Punto de entrada donde se monta la app.
+  - **index.css**: Estilos globales.
+  - **assets/**: Recursos estáticos (imágenes, logos, etc).
+  - **core/context/**: Contextos globales, como el usuario actual.
+  - **features/**: Cada subcarpeta representa una funcionalidad principal:
+    - **tasks/**: Todo lo relacionado con tareas (componentes, contexto, vistas).
+    - **users/**: Todo lo relacionado con usuarios (componentes, contexto, vistas).
+    - **theme/**: Funcionalidad de cambio de tema.
+
+## Hooks:
+
+- **UseState**: Variables reactivas singleton que son persistentes a lo largo de la ejecucion.
+- **UseEffect**: Permite reaccionar a cambios de estado, tambien se ejecuta cuando se renderiza por primera vez un componente.
+- **UseContext:**: Logica compartida entre los distintos componentes de la APP:
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
