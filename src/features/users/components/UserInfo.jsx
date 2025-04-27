@@ -14,7 +14,7 @@ export function UserInfo({ user }) {
             <p id="userName">{user.username}</p>
             <p id="userStats">Tareas: {user.tasksDone} / {user.totalTasks}</p>
 
-            <button onClick={ deselectUser }>Deseleccioanr</button>
+            <button onClick={ deselectUser }>Deseleccionar</button>
         </div>
 
     );
