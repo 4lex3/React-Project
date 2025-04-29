@@ -2,6 +2,7 @@
 Aplicacion de TODO con gestion de multiusuarios.
 
 **Funcionalidad Extra:** Deteccion del tema de navegador.
+
 ![Portada](https://raw.githubusercontent.com/4lex3/React-Project/refs/heads/main/docs/portada.png)
 
 ## Arquitectura:
