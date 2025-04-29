@@ -45,7 +45,9 @@ export function Tasks() {
     } ;
 
     const updateTaskName = (taskId) => {
-        const newName = prompt("Editar tarea:");
+
+        const newName = prompt("Editar tarea:", tasks.find(task => task.id === taskId).title);
+        if(!newName) return;
         updateTask(taskId, newName)
     }
 
